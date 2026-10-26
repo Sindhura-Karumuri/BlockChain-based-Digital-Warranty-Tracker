@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blockchain-Based Digital Warranty Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.13.4/ethers.umd.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Digital Warranty Tracker</h1>
+    <div class="wallet">
+      <span id="account">Not connected</span>
+      <button id="connectBtn">Connect MetaMask</button>
+    </div>
+  </header>
+
+  <nav>
+    <button class="tab active" data-tab="register">Seller Dashboard</button>
+    <button class="tab" data-tab="verify">Verify Warranty</button>
+    <button class="tab" data-tab="transfer">Transfer Ownership</button>
+  </nav>
+
+  <main>
+    <div id="status" class="status" hidden></div>
+
+    <!-- Module 1: Product Registration -->
+    <section id="register" class="panel">
+      <h2>Register Warranty</h2>
+      <p class="hint">Only authorised sellers can register. Invoice is hashed in your browser; only the hash goes on-chain.</p>
+      <label>Product ID <input id="regProductId" placeholder="LAP123456" /></label>
+      <label>Product Name <input id="regName" placeholder="Dell Laptop" /></label>
+      <label>Customer Wallet Address <input id="regCustomer" placeholder="0x..." /></label>
+      <label>Purchase Date <input id="regPurchase" type="date" /></label>
+      <label>Warranty Period
+        <span class="row">
+          <input id="regPeriod" type="number" min="1" value="2" />
+          <select id="regUnit"><option value="years">Years</option><option value="months">Months</option></select>
+        </span>
+      </label>
+      <label>Invoice file (optional, hashed locally) <input id="regFile" type="file" /></label>
+      <button id="registerBtn" class="primary">Register</button>
+    </section>
+
+    <!-- Modules 2 and 3: Verification and Status -->
+    <section id="verify" class="panel" hidden>
+      <h2>Warranty Verification</h2>
+      <label>Enter Product ID <input id="verProductId" placeholder="LAP123456" /></label>
+      <button id="verifyBtn" class="primary">Verify</button>
+      <div id="verifyResult" class="result" hidden></div>
+    </section>
+
+    <!-- Module 4: Ownership Transfer -->
+    <section id="transfer" class="panel" hidden>
+      <h2>Transfer Ownership</h2>
+      <p class="hint">You must be the current owner (connected wallet).</p>
+      <label>Product ID <input id="trProductId" placeholder="LAP123456" /></label>
+      <label>New Owner Wallet Address <input id="trNewOwner" placeholder="0x..." /></label>
+      <button id="transferBtn" class="primary">Transfer</button>
+    </section>
+  </main>
+
+  <footer>Blockchain-Based Digital Warranty Tracker &middot; Solidity + ethers.js + MetaMask</footer>
+  <script src="app.js"></script>
+</body>
+</html>

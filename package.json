@@ -1,0 +1,18 @@
+{
+  "name": "blockchain-digital-warranty-tracker",
+  "version": "1.0.0",
+  "description": "Blockchain-Based Digital Warranty Tracker (Solidity + Hardhat + ethers.js + MetaMask)",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "node": "hardhat node",
+    "deploy:local": "hardhat run scripts/deploy.js --network localhost",
+    "deploy:ganache": "hardhat run scripts/deploy.js --network ganache",
+    "serve": "npx http-server frontend -p 3000 -c-1"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.0"
+  }
+}

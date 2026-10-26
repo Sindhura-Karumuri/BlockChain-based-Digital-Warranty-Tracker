@@ -1,0 +1,28 @@
+:root { --navy:#0b1f3a; --teal:#1ba39c; --bg:#eef5fc; --muted:#56667a; --red:#d9572b; }
+* { box-sizing: border-box; }
+body { margin:0; font-family: Arial, Helvetica, sans-serif; background:var(--bg); color:#1e2b3c; }
+header { background:var(--navy); color:#fff; padding:16px 24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
+header h1 { margin:0; font-size:22px; }
+.wallet { display:flex; gap:12px; align-items:center; font-size:13px; }
+nav { display:flex; gap:8px; padding:16px 24px 0; flex-wrap:wrap; }
+.tab { border:0; background:#dcebfa; color:var(--navy); padding:10px 18px; border-radius:8px 8px 0 0; cursor:pointer; font-weight:bold; }
+.tab.active { background:#fff; }
+main { max-width:640px; margin:0 24px 24px; }
+@media (min-width:720px){ main { margin:0 auto 24px; } nav { max-width:640px; margin:0 auto; padding:16px 0 0; } }
+.panel { background:#fff; padding:24px; border-radius:0 8px 8px 8px; box-shadow:0 2px 8px rgba(0,0,0,.1); }
+h2 { margin-top:0; color:var(--navy); }
+label { display:block; margin:12px 0; font-weight:bold; font-size:14px; }
+input, select { display:block; width:100%; margin-top:6px; padding:10px; border:1px solid #c5d3e3; border-radius:6px; font-size:15px; }
+.row { display:flex; gap:8px; } .row input { margin-top:6px; }
+button { font-size:15px; }
+button.primary, #connectBtn { background:var(--teal); color:#fff; border:0; padding:11px 20px; border-radius:6px; cursor:pointer; font-weight:bold; }
+button:disabled { opacity:.6; cursor:wait; }
+.hint { color:var(--muted); font-size:13px; }
+.status { margin:16px 0; padding:12px 14px; border-radius:6px; background:#dcebfa; font-size:14px; word-break:break-all; }
+.status.error { background:#fde4db; color:#8a2c0e; } .status.ok { background:#d8f3ef; color:#0b5a55; }
+.result { margin-top:18px; border:1px solid #d5e1ef; border-radius:8px; padding:14px; }
+.result dl { display:grid; grid-template-columns:140px 1fr; gap:6px 10px; margin:0; font-size:14px; }
+.result dt { color:var(--muted); } .result dd { margin:0; font-weight:bold; word-break:break-all; }
+.badge { display:inline-block; padding:3px 12px; border-radius:14px; color:#fff; }
+.badge.active { background:var(--teal); } .badge.expired { background:var(--red); }
+footer { text-align:center; color:var(--muted); font-size:12px; padding:16px; }
